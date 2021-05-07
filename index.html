@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>TerraceTechフロントエンドエンジニア養成所</title>
+  </head>
+  <body>
+    <div>
+      <ul id="List">
+      </ul>
+    </div>
+    <script>    
+      var ulElement = document.getElementById('List');
+      for(var i=1; i<=2; i++) {
+      var liElement = document.createElement('li');
+      liElement.textContent = 'a'+i;
+      ulElement.appendChild(liElement);
+      var aElement = document.createElement('a');
+      aElement.href= 'a'+i+'.html'
+      liElement.appendChild(aElement);
+      var imgElement = document.createElement('img');
+      imgElement.src = '/img/bookmark.png';
+      aElement.appendChild(imgElement);
+}
+    </script>
+  </body>
+</html>
