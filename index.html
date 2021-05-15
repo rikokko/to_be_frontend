@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>TerraceTechフロントエンドエンジニア養成所</title>
+    <title>TerraceTechフロントエンドエンジニア養成所（lesson2完全版です！）</title>
   </head>
   <body>
     <div>
       <ul id="js-list"></ul>
     </div>
     <script>
-      const ul = document.getElementById('js-list'); //ulの中身を取得する
+      const ul = document.getElementById('js-list');
       const li = document.createElement('li'); const a = document.createElement('a'); const img = document.createElement('img');
       a.setAttribute("href","1.html"); img.setAttribute("src","bookmark.png"); img.setAttribute("alt","ブックマーク"); 
       a.textContent = 'これです';
-      ul.appendChild(li);  li.appendChild(a); a.appendChild(img);
+      ul.appendChild(li);  li.appendChild(a); a.prepend(img);
     </script>
   </body>
 </html>
-
