@@ -17,9 +17,9 @@
       const a = document.createElement("a");
       const img = document.createElement("img");
       a.textContent = "これです";
-      a.setAttribute("href","1.html");
-      img.setAttribute("src", "bookmark.png");
-      img.setAttribute("alt","ブックマーク");
+      a.href = "1.html"
+      img.src = "bookmark.png"
+      img.alt = "ブックマーク"
       a.prepend(img);
       li.prepend(a);
       ul.appendChild(li);
