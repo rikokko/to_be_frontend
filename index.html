@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=“ja”>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>TerraceTechフロントエンドエンジニア養成所（修正済みです！）</title>
+    <meta charset=“UTF-8" />
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0" />
+    <meta http-equiv=“X-UA-Compatible” content=“ie=edge” />
+    <link rel=“stylesheet” href=“style.css” type=“text/css” />
+    <title>TerraceTechフロントエンドエンジニア養成所（fix:conflict）</title>
   </head>
   <body>
-    <div>
-      <ul id="js-list"></ul>
-    </div>
-    <script>
-      const ul = document.getElementById('js-list');
-      const li = document.createElement('li'); const a = document.createElement('a'); const img = document.createElement('img');
-      a.setAttribute("href","1.html"); img.setAttribute("src","bookmark.png"); img.setAttribute("alt","ブックマーク"); 
-      a.textContent = 'これです';
-      ul.appendChild(li);  li.appendChild(a); a.appendChild(img);
-    </script>
+      <div>
+        <ul id="js-list"></ul>
+      </div>
+  <script>
+      const ul = document.getElementById("js-list");
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      const img = document.createElement("img");
+      a.textContent = "これです";
+      a.href = "1.html"
+      img.src = "bookmark.png"
+      img.alt = "ブックマーク"
+      a.prepend(img);
+      li.prepend(a);
+      ul.appendChild(li);
+  </script>
   </body>
 </html>
