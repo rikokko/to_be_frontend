@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang=“ja”>
   <head>
-    <meta http-equiv="content-type" charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>TerraceTechフロントエンドエンジニア養成所（未追跡ファイルに追加されない問題取り組み中）</title>
+    <meta charset=“UTF-8" />
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0" />
+    <meta http-equiv=“X-UA-Compatible” content=“ie=edge” />
+    <link rel=“stylesheet” href=“style.css” type=“text/css” />
+    <title>TerraceTechフロントエンドエンジニア養成所（fix:conflict）</title>
   </head>
   <body>
-    <div>
-      <ul id="js-list">
-      </ul>
-    </div>
-    <script>    
-      var ul = document.getElementById('js-list');
-      for(var i=1; i<=2; i++) {
-      var li = document.createElement('li');
-      li.textContent = a$i;
+      <div>
+        <ul id="js-list"></ul>
+      </div>
+  <script>
+      const ul = document.getElementById("js-list");
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      const img = document.createElement("img");
+      a.textContent = "これです";
+      a.href = "1.html"
+      img.src = "bookmark.png"
+      img.alt = "ブックマーク"
+      a.prepend(img);
+      li.prepend(a);
       ul.appendChild(li);
-      var a = document.createElement('a');
-      a.href= a$i.html;
-      li.appendChild(a);
-      var img = document.createElement('img');
-      img.src = '/img/bookmark.png';
-      a.appendChild(img);
-}
-    </script>
+  </script>
   </body>
 </html>
