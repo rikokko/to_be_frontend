@@ -5,12 +5,6 @@
     ];
   const fragment = document.createDocumentFragment();
 
-  function makeLinkList() {
-    return new Promise((resolve) => {
-      resolve();
-    });
-  }
-
   function ListContents(){
     for(let i=0; i<=info.length-1; i++) {
       const li = document.createElement('li');
@@ -25,8 +19,14 @@
       ul.appendChild(fragment)
   };
 
+  function makeLinkList() {
+    return new Promise((resolve,reject) => {
+      resolve(ListContents());
+    });
+  }
+
   makeLinkList().then(() => { 
-    ListContents();
+     console.log('成功！');
   });
 
 
