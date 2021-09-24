@@ -6,15 +6,15 @@ const info = [
 
 const fragment = document.createDocumentFragment();
 
-function ListContents(add){
-  for(let i=0; i<=add.length-1; i++) {
+function ListContents(item){
+  for(let i=0; i<=item.length-1; i++) {
     const li = document.createElement('li');
     const a = document.createElement('a');
     const img = document.createElement('img');
-    a.textContent = add[i].text;
-    a.href = add[i].to;
-    img.src = add[i].img;
-    img.alt = add[i].alt;
+    a.textContent = item[i].text;
+    a.href = item[i].to;
+    img.src = item[i].img;
+    img.alt = item[i].alt;
     fragment.appendChild(li).appendChild(a).insertBefore(img, a.firstChild);
 }
     ul.appendChild(fragment)
@@ -26,6 +26,6 @@ function makeLinkList() {
   });
 }
 
-makeLinkList().then(() => { 
-  ListContents(info)
+makeLinkList().then((item) => { 
+  ListContents(item)
 });
