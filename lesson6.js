@@ -11,7 +11,7 @@ function makeLinkList() {
   });
 }
 
-  makeLinkList().then((item) => {
+makeLinkList().then((item) => {
     for (let i = 0; i <= item.length - 1; i++) {
       const li = document.createElement('li');
       const a = document.createElement('a');
@@ -23,4 +23,4 @@ function makeLinkList() {
       fragment.appendChild(li).appendChild(a).insertBefore(img, a.firstChild);
     }
     ul.appendChild(fragment)
-  });
+});
