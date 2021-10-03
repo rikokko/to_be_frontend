@@ -1,7 +1,13 @@
 const ul = document.getElementById('js-list');
+const loadingTime = document.createElement('img');
+loadingTime.src = "loading-circle.gif";
+loadingTime.id = 'loading-img'
+ul.appendChild(loadingTime);
+const loading = document.getElementById('loading-img');
+
 const info = [
-  {to: "bookmark.html", img: "1.png", alt:"画像1", text: "ブックマーク"},
-  {to: "message.html", img: "2.png", alt:"画像2", text: "メッセージ"}
+  {to: "bookmark.html", img: "bookmark-icon.png", alt:"画像1", text: "ブックマーク"},
+  {to: "message.html", img: "mail-icon.png", alt:"画像2", text: "メッセージ"}
   ];
 const fragment = document.createDocumentFragment();
 
@@ -12,6 +18,7 @@ function makeLinkList() {
 }
 
 makeLinkList().then((item) => {
+      loading.remove();
     for (let i = 0; i <= item.length - 1; i++) {
       const li = document.createElement('li');
       const a = document.createElement('a');
@@ -20,7 +27,7 @@ makeLinkList().then((item) => {
       a.href = item[i].to;
       img.src = item[i].img;
       img.alt = item[i].alt;
-      fragment.appendChild(li).appendChild(a).insertBefore(img, a.firstChild);
+      fragment.appendChild(li).appendChild(a).appendChild(img);
     }
     ul.appendChild(fragment)
 });
