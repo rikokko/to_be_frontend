@@ -1,8 +1,8 @@
 const ul = document.getElementById('js-list');
-const loadingTime = document.createElement('img');
-loadingTime.src = "loading-circle.gif";
-loadingTime.id = 'loading-img'
-ul.appendChild(loadingTime);
+const loadingImg = document.createElement('img');
+loadingImg.src = "loading-circle.gif";
+loadingImg.id = 'loading-img'
+ul.appendChild(loadingImg);
 const loading = document.getElementById('loading-img');
 
 const info = [
