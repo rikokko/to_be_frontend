@@ -1,4 +1,6 @@
 const ul = document.getElementById('js-list');
+const fragment = document.createDocumentFragment();
+
 const loadingImg = document.createElement('img');
 loadingImg.src = "loading-circle.gif";
 loadingImg.id = 'loading-img'
@@ -9,7 +11,6 @@ const info = [
   {to: "bookmark.html", img: "bookmark-icon.png", alt:"画像1", text: "ブックマーク"},
   {to: "message.html", img: "mail-icon.png", alt:"画像2", text: "メッセージ"}
   ];
-const fragment = document.createDocumentFragment();
 
 function makeLinkList() {
   return new Promise((resolve) => {
