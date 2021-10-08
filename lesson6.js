@@ -17,14 +17,14 @@ function deleteLoadingImg() {
    loading.remove();
 }
 
-function makeLinkList() {
-  makeLoadingImage();
+function LoadingForMakeList() {
+  makeLoadingImg();
 return new Promise((resolve) => {
   setTimeout(() => resolve(info), 3000)
 });
 }
 
-makeLinkList().then((item) => {
+LoadingForMakeList().then((item) => {
       deleteLoadingImg();
       const fragment = document.createDocumentFragment();
     for (let i = 0; i <= item.length - 1; i++) {
