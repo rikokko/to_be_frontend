@@ -1,5 +1,9 @@
 const ul = document.getElementById('js-list');
 const fragment = document.createDocumentFragment();
+const info = [
+  {to: "bookmark.html", img: "bookmark-icon.png", alt:"画像1", text: "ブックマーク"},
+  {to: "message.html", img: "mail-icon.png", alt:"画像2", text: "メッセージ"}
+  ];
 
 function makeLoadingImage(){
     const loadingImg = document.createElement('img');
@@ -15,10 +19,6 @@ function deleteLoadingImg() {
 
 function makeLinkList() {
   makeLoadingImage();
-  const info = [
-    {to: "bookmark.html", img: "bookmark-icon.png", alt:"画像1", text: "ブックマーク"},
-    {to: "message.html", img: "mail-icon.png", alt:"画像2", text: "メッセージ"}
-    ];
 return new Promise((resolve) => {
   setTimeout(() => resolve(info), 3000)
 });
@@ -26,6 +26,7 @@ return new Promise((resolve) => {
 
 makeLinkList().then((item) => {
       deleteLoadingImg();
+      const fragment = document.createDocumentFragment();
     for (let i = 0; i <= item.length - 1; i++) {
       const li = document.createElement('li');
       const a = document.createElement('a');
