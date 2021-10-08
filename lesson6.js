@@ -5,7 +5,7 @@ const info = [
   {to: "message.html", img: "mail-icon.png", alt:"画像2", text: "メッセージ"}
   ];
 
-function makeLoadingImage(){
+function makeLoadingImg(){
     const loadingImg = document.createElement('img');
     loadingImg.src = "loading-circle.gif";
     loadingImg.id = 'loading-img'
