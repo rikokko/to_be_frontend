@@ -1,5 +1,5 @@
 const ul = document.getElementById('js-list');
-const info = [
+const listItems = [
   { to: "bookmark.html", img: "bookmark-icon.png", alt: "画像1", text: "ブックマーク" },
   { to: "message.html", img: "mail-icon.png", alt: "画像2", text: "メッセージ" }
 ];
@@ -19,7 +19,7 @@ function deleteLoadingImg() {
 function LoadingForMakeList() {
   makeLoadingImg();
   return new Promise((resolve) => {
-    setTimeout(() => resolve(info), 3000)
+    setTimeout(() => resolve(listItems), 3000)
   });
 }
 
