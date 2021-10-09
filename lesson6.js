@@ -16,15 +16,7 @@ function deleteLoadingImg() {
   loading.remove();
 }
 
-function LoadingForMakeList() {
-  makeLoadingImg();
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(listItems), 3000)
-  });
-}
-
-LoadingForMakeList().then((item) => {
-  deleteLoadingImg();
+function createList(item){
   const fragment = document.createDocumentFragment();
   for (let i = 0; i <= item.length - 1; i++) {
     const li = document.createElement('li');
@@ -37,4 +29,16 @@ LoadingForMakeList().then((item) => {
     fragment.appendChild(li).appendChild(a).appendChild(img);
   }
   ul.appendChild(fragment)
+}
+
+function LoadingForMakeList() {
+  makeLoadingImg();
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(listItems), 3000)
+  });
+}
+
+LoadingForMakeList().then((item) => {
+  deleteLoadingImg();
+  createList(item)
 });
