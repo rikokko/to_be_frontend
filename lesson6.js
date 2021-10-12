@@ -4,7 +4,7 @@ const listItems = [
   { to: "message.html", img: "mail-icon.png", alt: "画像2", text: "メッセージ" }
 ];
 
-function makeLoadingImg() {
+function showLoadingImg() {
   const loadingImg = document.createElement('img');
   loadingImg.src = "loading-circle.gif";
   loadingImg.id = 'loading-img'
@@ -31,14 +31,14 @@ function createList(item){
   ul.appendChild(fragment)
 }
 
-function LoadingForMakeList() {
-  makeLoadingImg();
+function fetchListData() {
+  showLoadingImg();
   return new Promise((resolve) => {
-    setTimeout(() => resolve(listItems), 3000)
+  setTimeout(() => resolve(listItems), 3000)
   });
 }
 
-LoadingForMakeList().then((item) => {
+fetchListData().then((item) => {
   deleteLoadingImg();
   createList(item)
 });
