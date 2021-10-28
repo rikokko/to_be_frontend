@@ -33,12 +33,14 @@ function createList(item){
 
 function fetchListData() {
   showLoadingImg();
-  return new Promise((resolve) => {
-  setTimeout(() => resolve(listItems), 3000)
-  });
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => reject(Error("データを取得できませんでした")), 3000)
+    })
 }
 
-fetchListData().then((item) => {
+fetchListData()
+.then((listItems) => {
   deleteLoadingImg();
-  createList(item)
-});
+  console.log(createList(listItems))
+})
+.catch(console.error)
