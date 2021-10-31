@@ -4,7 +4,7 @@ const listItems = [
   { to: "message.html", img: "mail-icon.png", alt: "画像2", text: "メッセージ" }
 ];
 
-function makeLoadingImg() {
+function showLoadingImg() {
   const loadingImg = document.createElement('img');
   loadingImg.src = "loading-circle.gif";
   loadingImg.id = 'loading-img'
@@ -16,15 +16,7 @@ function deleteLoadingImg() {
   loading.remove();
 }
 
-function LoadingForMakeList() {
-  makeLoadingImg();
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(listItems), 3000)
-  });
-}
-
-LoadingForMakeList().then((item) => {
-  deleteLoadingImg();
+function createList(item){
   const fragment = document.createDocumentFragment();
   for (let i = 0; i <= item.length - 1; i++) {
     const li = document.createElement('li');
@@ -37,4 +29,18 @@ LoadingForMakeList().then((item) => {
     fragment.appendChild(li).appendChild(a).appendChild(img);
   }
   ul.appendChild(fragment)
-});
+}
+
+function fetchListData() {
+  showLoadingImg();
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => reject(Error("データを取得できませんでした")), 3000)
+    })
+}
+
+fetchListData()
+.then((listItems) => {
+  deleteLoadingImg();
+  console.log(createList(listItems))
+})
+.catch(console.error)
