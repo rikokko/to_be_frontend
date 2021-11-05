@@ -33,9 +33,9 @@ function createList(item){
 
 function fetchListData() {
   showLoadingImg();
-  return new Promise(function(resolve, reject) {
-    setTimeout(() => reject(Error("データを取得できませんでした")), 3000)
-    })
+  return new Promise((resolve,reject) => {
+  setTimeout(() => reject(Error("データを取得できませんでした")), 3000)
+  });
 }
 
 fetchListData()
@@ -46,3 +46,4 @@ fetchListData()
 .catch((error) => {
   console.error(error);
 });
+
