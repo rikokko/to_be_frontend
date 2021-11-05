@@ -41,6 +41,8 @@ function fetchListData() {
 fetchListData()
 .then((listItems) => {
   deleteLoadingImg();
-  console.log(createList(listItems))
+  createList(listItems)
 })
-.catch(console.error)
+.catch((error) => {
+  console.error(error);
+});
