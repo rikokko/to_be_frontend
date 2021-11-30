@@ -9,8 +9,7 @@ loadingImg.id = "loading-img";
 ul.appendChild(loadingImg);
 
 function createList(item) {
-  //リストを表示する
-  const fragment = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
   for (let i = 0; i <= item.length - 1; i++) {
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -22,8 +21,7 @@ function createList(item) {
     fragment.appendChild(li).appendChild(a).appendChild(img);
   }
   ul.appendChild(fragment)
-  //ローディング画像を削除する
-  const loadingID = document.getElementById("loading-img");
+    const loadingID = document.getElementById("loading-img");
   loadingID.remove();
 }
 
