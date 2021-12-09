@@ -3,13 +3,22 @@ const listItems = [
   { to: "bookmark.html", img: "bookmark-icon.png", alt: "画像1", text: "ブックマーク" },
   { to: "message.html", img: "mail-icon.png", alt: "画像2", text: "メッセージ" }
 ];
-const loadingImg = document.createElement('img');
-loadingImg.src = "loading-circle.gif";
-loadingImg.id = "loading-img";
-ul.appendChild(loadingImg);
+
+function showLoading() {
+  const loadingImg = document.createElement('img');
+  loadingImg.src = "loading-circle.gif";
+  loadingImg.id = "loading-img";
+  ul.appendChild(loadingImg);
+}
+
+function removeLoading() {
+  const loadingID = document.getElementById('loading-img');
+  loadingID.remove();
+
+}
 
 function createList(item) {
-    const fragment = document.createDocumentFragment();
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i <= item.length - 1; i++) {
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -21,16 +30,21 @@ function createList(item) {
     fragment.appendChild(li).appendChild(a).appendChild(img);
   }
   ul.appendChild(fragment)
-    const loadingID = document.getElementById("loading-img");
-  loadingID.remove();
+  removeLoading()
 }
 
 async function fetchListData() {
-  const promise = new Promise((resolve) => {
+  const promise = await new Promise((resolve) => {
     setTimeout(() => resolve(listItems), 3000)
   })
-  const item = await promise;
-  createList(item)
+  return promise;
 }
+fetchListData().then((item) => {
+  createList(item)
+});
+
+showLoading()
 
 fetchListData()
+
+
