@@ -39,12 +39,15 @@ async function fetchListData() {
   })
   return promise;
 }
-fetchListData().then((item) => {
-  createList(item)
-});
 
-showLoading()
+async function asyncProcessing() {
+  showLoading();
+  const item = await fetchListData();
+  removeLoading();
+  createList(item);
+}
 
 fetchListData()
 
+asyncProcessing()
 
