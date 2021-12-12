@@ -34,7 +34,7 @@ function createList(item) {
 }
 
 async function fetchListData() {
-  const promise = await new Promise((resolve) => {
+  const promise = new Promise((resolve) => {
     setTimeout(() => resolve(listItems), 3000)
   })
   return promise;
