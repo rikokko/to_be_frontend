@@ -14,7 +14,6 @@ function showLoading() {
 function removeLoading() {
   const loadingID = document.getElementById('loading-img');
   loadingID.remove();
-
 }
 
 function createList(item) {
