@@ -29,7 +29,6 @@ function createList(item) {
     fragment.appendChild(li).appendChild(a).appendChild(img);
   }
   ul.appendChild(fragment)
-  removeLoading()
 }
 
 async function fetchListData() {
