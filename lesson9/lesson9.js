@@ -45,7 +45,5 @@ async function asyncProcessing() {
   createList(item);
 }
 
-fetchListData()
-
 asyncProcessing()
 
