@@ -18,7 +18,7 @@ function removeLoading() {
 
 function createList(item) {
   const fragment = document.createDocumentFragment();
-  for (let i = 0; i <= item.length - 1; i++) {
+  for (let i = 0; i < item.length; i++) {
     const li = document.createElement('li');
     const a = document.createElement('a');
     const img = document.createElement('img');
