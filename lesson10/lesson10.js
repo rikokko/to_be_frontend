@@ -47,11 +47,8 @@ async function asyncProcessing() {
 
 try {
   fetchListData();
-
 } catch (e) {
-  console.error(error);
+  console.error(e.message);
 } finally {
   asyncProcessing();
 }
-
-
