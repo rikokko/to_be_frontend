@@ -32,10 +32,9 @@ function createList(item) {
 }
 
 function fetchListData() {
-  const promise = new Promise((resolve) => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(listItems), 3000)
   })
-  return promise;
 }
 
 async function asyncProcessing() {
