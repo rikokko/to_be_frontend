@@ -16,7 +16,8 @@ function removeLoading() {
   loadingID.remove();
 }
 
-function createList(item) {
+async function createList() {
+  const item = await asyncProcessing()
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < item.length; i++) {
     const li = document.createElement('li');
@@ -39,15 +40,14 @@ function fetchListData() {
 
 async function asyncProcessing() {
   showLoading();
-  const item = await fetchListData();
-  removeLoading();
-  createList(item);
+  try {
+    return await fetchListData();
+  } catch (e) {
+    console.error(e.message)
+  }
+  finally {
+    removeLoading();
+  }
 }
 
-try {
-  fetchListData();
-} catch (e) {
-  console.error(e.message);
-} finally {
-  asyncProcessing();
-}
+createList()
